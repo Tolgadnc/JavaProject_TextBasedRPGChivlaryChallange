@@ -1,18 +1,21 @@
-package game;
+public class Potion extends Items { //Class extends the main class
 
-public class Potion extends Items {
-	private int staminaIndex;
   
   
   //constructor
   
-  public Potion (String name, String description, int staminaIndex) {
+  public Potion (String name, String description) {
 	  super (name, description);
-	  this.staminaIndex = staminaIndex;
+
   }
   
   //getter method
-  public int getStaminaIndex() {
-	  return staminaIndex;
+
+  public void consume(Hero hero){
+
+
   }
+
+
+
 }

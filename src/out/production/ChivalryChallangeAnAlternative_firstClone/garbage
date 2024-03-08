@@ -1,0 +1,101 @@
+import java.util.List;
+
+
+public class Exits {
+	private String direction;
+	private Area goesTo;
+	// Create a new class Area:  this represents the area destination...
+	private List <Directions> allowedDirections;
+	//Create a new class Direction: this represents the directions allowed for the exits...                                               */
+
+	//Creating a Constructor and initializing
+	public Exits (String direction, Area goesTo, List<Directions> allowedDirections) {
+		this.direction = direction;
+		this.goesTo = goesTo;
+		this.allowedDirections = allowedDirections;
+}
+
+	// getter and setter methods for 1) direction
+
+	public String getDirection() {
+		return direction;
+	}
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+
+	// getter and setter methods for 2) goesTo
+
+	public Area getGoesTo() {
+		return goesTo;
+	}
+
+	public void setDirectionForExit(){
+
+	}
+
+	public void setGoesTo(Area goesTo) {
+		this.goesTo = goesTo;
+	}
+
+	// getter and setter methods for 3) allowedDirections
+
+	public List <Directions> getAllowedDirections() {
+		return allowedDirections;
+	}
+
+	public void setAllowedDirections ( List<Directions> allowedDirections) {
+		this.allowedDirections = allowedDirections;
+	}
+
+
+
+
+	}
+
+###################################INITIATE COMBAT OLD VERSION#################################################3
+public void initiateCombat(Villain villain, Sword sword, Shield shield, Hero hero) {
+
+
+
+        if (getCurrentCoordinate() == villain.getCurrentCoordinatesVillain()){
+
+            boolean combatInProgress = true;
+            if (villain.getHealthPoints() == 0 || healthPoints == 0){
+                combatInProgress = false;
+            }
+
+
+            while (combatInProgress){
+
+                Scanner scanner = new Scanner(System.in);
+                String userAttack = scanner.nextLine();
+                switch (userAttack){
+                    case "slice":
+                        sword.slice(villain, hero);
+                        villain.villainAttack();
+                        while (true){
+                            String userDefend = scanner.nextLine();
+                            System.out.println("You are under attack! you must respond. Enter \"block\" or \"parry\"");
+                            switch (userDefend){
+                                case "block":
+                                    block(sword, shield, villain);
+                                    initiateCombat(villain, sword, shield, hero);
+                                    break;
+                                case "parry":
+                                    parry(shield, villain, sword);
+                                    if (parry(shield, villain, sword) == true) sword.damageTurnBackToNormal();
+                                    initiateCombat(villain, sword, shield, hero);
+                                    break;
+                            }
+                        }break;
+
+
+                }
+
+            }
+
+        }
+    }
+
+###################################################################################################################

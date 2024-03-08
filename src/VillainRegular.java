@@ -1,10 +1,20 @@
-package game;
-
-import java.util.List;
-
 public class VillainRegular extends Villain{
-	public VillainRegular ( int xCoordinate, int yCoordinate, int healthPoints, List<Items> villainItems, int parryDenyCapacity, int damageCapacity, int blockCapacity) {
+
+
+	private static final int regularVillainMaxHealth = 10;
+
+
+	public VillainRegular (String name, String description, int xCoordinate, int yCoordinate, int healthPoints, int parryDenyCapacity, int damageCapacity, int blockCapacity) {
+
 		
-		super(xCoordinate, yCoordinate, healthPoints, villainItems, parryDenyCapacity, damageCapacity, blockCapacity);
-}
+		super(name, description, xCoordinate, yCoordinate, healthPoints, parryDenyCapacity, damageCapacity, blockCapacity);
+
+
+
+    }
+
+	public void restoreHealth(){
+		setHealthPoints(regularVillainMaxHealth);
+	}
+
 }

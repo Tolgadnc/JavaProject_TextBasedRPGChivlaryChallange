@@ -1,17 +1,25 @@
-package game;
+
 
 public class StaminaPotion extends Potion{
-	 private int staminaPower;
+
+
 //const
-	 public StaminaPotion (String name, String description,int staminaIndex, int staminaPower) {
-		 super(name, description, staminaIndex);
-		 this.staminaPower = staminaPower;
+	 public StaminaPotion (String name, String description) {
+		 super(name, description);
+
 	 }
 	 
-	 public int getStaminaPower() {
-			return staminaPower;
+
+
+
+	public String toString(){
+		return getName();
+	}
+	//Method to Consume potion
+	public void consume(Hero hero){
+		System.out.println("Your stamina is full now!");
+		//Tops the SP of hero.
+		 hero.setStaminaPoints(hero.getHeroMaxStamina());
+
+	 }
 }
-		public int getStaminaIndex() {
-			  return staminaPower/2;      // gets half of the power
-			}
-		}

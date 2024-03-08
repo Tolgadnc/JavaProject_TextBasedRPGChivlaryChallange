@@ -1,57 +1,74 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Vector;
 
 public class Area {
     private int villainCount;
-    private ArrayList<Coordianates> coordinates;
-    private ArrayList<Item> itemsInArea;
+
+    private ArrayList<Items> itemsInArea;
     private ArrayList<Villain> villains;
     private String title;
     private String description;
-    private ArrayList<Exit> exits;
 
-    public Area(String title, String description, int villainCount, ArrayList<Item> itemsInArea, ArrayList<Exits> exits, ArrayList<Coordinates> coordinates, ArrayList<Villains> villains){
+
+
+
+
+
+    public Area(String title, String description, int villainCount){
         this.title = title;
         this.description = description;
         this.villainCount = villainCount;
-        this.itemsInArea = itemsInArea;
-        this.exits = exits;
-        this.coordinates = coordinates;
-        this.villains = villains;
+        this.itemsInArea = new ArrayList<Items>();
+        this.villains = new ArrayList<Villain>() ;
+
 
     }
-    public void addItems(Item item){
+
+
+    //Add items to the area
+    public void addItems(Items item){
         itemsInArea.add(item);
     }
-    public void removeItems(Item item){
+    //Remove items from the area
+    public void removeItems(Items item){
         itemsInArea.remove(item);
     }
+    //add a villain to the area
     public void addVillain(Villain villain){
         villains.add(villain);
         villainCount++;
     }
+    // Remove a villain from the area
     public void removeVillain(Villain villain){
         villains.remove(villain);
         villainCount--;
     }
-    public void addExits(Exits exit){
-        exits.add(exit);
 
-    }
-    public void useExit(Exits exit){
-        //will be implemented when exit class is available.
-        }
-    }
+
+
     public int getVillainCount(){
         return villainCount;
     }
-    public String promptDescription(){
-        String titleOfArea = "You are in " + title + "\n";
-        String descOfArea = description;
-        String wholePrompt = titleOfArea + descOfArea;
-        return wholePrompt;
 
-    }
-    public ArrayList<Item> getItemsInArea(){
+    public ArrayList<Items> getItemsInArea(){
         return itemsInArea;
     }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public void setVillainCount(int villainCount){
+        this.villainCount = villainCount;
+    }
+    //Decrement the count of the villains when one of them dies.
+    public void heroKillEnemy(){
+        villainCount--;
+
+
+    }
+
+
+
 }

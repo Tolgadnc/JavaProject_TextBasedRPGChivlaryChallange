@@ -1,6 +1,4 @@
-package game;
-
-public class Shield extends Items{
+public class Shield extends Items{ //class extends the mainClass
 	public int parryPower;
 	public int blockPower;
 	
@@ -18,6 +16,10 @@ public class Shield extends Items{
 		}
 	public int getParryPower() {
 		return parryPower;
+	}
+
+	public String toString(){
+		return getName();
 	}
 
 }

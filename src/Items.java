@@ -1,8 +1,8 @@
-package game;
 
-public class Items {
-	public String name;
-	public String description;
+
+public class Items { //Its the  main class for Sword, Potion and Shield
+	private String name;
+	private String description;
 	
 	
 	//Constructor
@@ -22,6 +22,10 @@ public class Items {
 	
 	public String getDescription() {
 		return description;
+	}
+
+	public String toString(Items item){
+		return getName();
 	}
 	
 }

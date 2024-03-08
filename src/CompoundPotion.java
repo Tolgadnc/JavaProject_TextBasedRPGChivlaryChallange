@@ -1,18 +1,25 @@
-package game;
+
 
 public class CompoundPotion extends Potion {
-	  private int superPower;
+	//class extends the main class
+
+
 //const
-	  public CompoundPotion(String name, String description,int staminaIndex, int superPower) {
-		  super(name, description, staminaIndex);
-		  this.superPower = superPower;
+	  public CompoundPotion(String name, String description) {
+		  super(name, description);
+
 	  }
-	  
-	  public int getSuperPower() {
-			return superPower;
-	  }
-	  
-	  public int getStaminaIndex() {
-		  return superPower/2;      // gets half of the power
-		}
+
+
+
+	public String toString(){
+		return getName();
 	}
+//Method to Consume potion
+	public void consume(Hero hero){
+		System.out.println("Both our health and stamina are full now!");
+		//Set the stats to their max values
+		  hero.setHealthPoints(hero.getHeroMaxHealth());
+		  hero.setStaminaPoints(hero.getHeroMaxStamina());
+	}
+}

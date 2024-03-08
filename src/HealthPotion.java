@@ -1,20 +1,27 @@
-package game;
 
-	public class HealthPotion extends Potion{
-	private int healingPower;
+
+public class HealthPotion extends Potion{
+
+
+
 
 //const
-public HealthPotion(String name, String description, int staminaIndex, int healingPower) {
-	super(name, description, staminaIndex);
-	this.healingPower = healingPower;
-}
-	
-	public int getHealingPower() {
-		return healingPower;
-	}
+	public HealthPotion(String name, String description) {
+		super(name, description);
 
+	}
 	
-	public int getStaminaIndex() {
-	  return healingPower/2;      // gets half of the power
+
+
+	public String toString(){
+			return getName();
+		}
+
+	//Method to Consume potion
+	public void consume(Hero hero){
+		System.out.println("Your health is full now!");
+		//Tops the HP
+		hero.setHealthPoints(hero.getHeroMaxHealth());
+
 	}
 }

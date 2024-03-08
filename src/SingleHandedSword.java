@@ -1,23 +1,17 @@
-package game;
 
 public class SingleHandedSword extends Sword {
-	private int sliceDamage;
+
 	
 	//constructor
-	public SingleHandedSword (String name, String description, int damage, int blockPower, int sliceDamage) {
-		super (name, description ,damage, blockPower);
-		this.sliceDamage = sliceDamage;
+	public SingleHandedSword (String name, String description, int blockPower, int sliceDamage, int stabDamage) {
+		super (name, description ,blockPower, sliceDamage, stabDamage);
 		}
-	
-	public int getSliceDamage() {
-		return sliceDamage;
-	}
-	public int getBlockPower() {
-		return blockPower;
-	}
-		public int getStaminaIndex() {
-			return damage *2;
-	
+
+	public String toString(){
+		return getName();
 	}
 	
+
+
+
 }
